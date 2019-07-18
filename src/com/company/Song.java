@@ -6,14 +6,18 @@ public class Song {
     private final String artist;
     private final String album;
     private final String year;
-    private final String genre;
+    private final int genre;
+    private final long length;
+    private final String path;
 
-    public Song(String artist, String year, String album, String title,String genre) {
+    public Song(String artist, String year, String album, String title,int genre,long length,String path) {
         this.artist = artist;
         this.year = year;
         this.album = album;
         this.title = title;
         this.genre=genre;
+        this.length=length;
+        this.path=path;
     }
 
     public String getArtist() {
@@ -32,7 +36,20 @@ public class Song {
         return title;
     }
 
-    public String getGenre() {
+    public int getGenre() {
         return genre;
+    }
+
+    public long getLength() {
+        return length;
+    }
+
+    public String getPath() {
+        return  path;
+    }
+
+    public void print() {
+        System.out.println("Artist: " + this.getArtist() + "\n Year :" + this.getYear() + "\n Album :" + this.getAlbum()
+                + "\n Title :" + this.getTitle() + "\n Genre :" + this.getGenre() + "\n Length :" + this.getLength());
     }
 }
