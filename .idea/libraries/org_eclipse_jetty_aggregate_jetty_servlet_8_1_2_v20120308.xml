@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.eclipse.jetty.aggregate:jetty-servlet:8.1.2.v20120308" type="repository">
+    <properties maven-id="org.eclipse.jetty.aggregate:jetty-servlet:8.1.2.v20120308" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jetty-servlet-8.1.2.v20120308.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

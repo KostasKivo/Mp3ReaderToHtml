@@ -14,9 +14,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        getMp3Files(args);
+        //getMp3Files(args);
 
-        databaseConnection();
+        //databaseConnection();
+
+        SongServlet servlet = new SongServlet();
+
+        //servlet.doGet();
 
 
     }
@@ -51,14 +55,9 @@ public class Main {
                             Song song = new Song(id3v2Tag.getArtist(),id3v2Tag.getYear(),id3v2Tag.getAlbum(),id3v2Tag.getTitle(),id3v2Tag.getGenre(),mp3file.getLength(), file.getPath());
 
                             Main.musicFiles.add(song);
-
                         }
-
-
                     }
                 }
-
-
             } else if (!Files.exists(directoryPath)) {
                 System.err.println("Path is invalid.Exiting!");
                 System.exit(1);
@@ -79,11 +78,9 @@ public class Main {
     public static void databaseConnection() {
 
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:h2:C:/Users/thsok/IdeaProjects/Mp3ReaderToHtml/project_db;AUTO_SERVER=TRUE;INIT=runscript from 'C:/Users/thsok/IdeaProjects/Mp3ReaderToHtml/project_db/create.sql'")){
+                "jdbc:h2:~/project_db;AUTO_SERVER=TRUE;INIT=runscript from '~/create.sql'")){
 
-            System.out.println("Comes here");
-
-            final String SQL_SONG_INSERT = "INSERT INTO SONGS(ARTIST,YEAR,ALBUM,TITLE) VALUES (?,?,?,?)";
+            final String SQL_SONG_INSERT = "INSERT INTO SONGS(ARTIST,SONG_YEAR,ALBUM,TITLE) VALUES (?,?,?,?)";
 
             PreparedStatement dbInsert = conn.prepareStatement(SQL_SONG_INSERT);
 

@@ -8,5 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.mpatric:mp3agic:0.9.1" level="project" />
+    <orderEntry type="library" name="h2-1.4.199" level="project" />
+    <orderEntry type="library" name="org.eclipse.jetty.aggregate:jetty-servlet:8.1.2.v20120308" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>
