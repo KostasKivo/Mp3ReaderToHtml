@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Mp3ReaderToHtml:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Mp3ReaderToHtml_jar</output-path>
+    <root id="archive" name="Mp3ReaderToHtml.jar">
+      <element id="module-output" name="Mp3ReaderToHtml" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/mpatric/mp3agic/0.9.1/mp3agic-0.9.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/servlet-api.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jetty-servlet-8.1.2.v20120308.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/h2-1.4.199.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

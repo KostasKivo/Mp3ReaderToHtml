@@ -5,23 +5,20 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.sql.DriverManager;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class Main {
 
-    private static Path directoryPath;
     private static ArrayList<Song> musicFiles = new ArrayList<>();
 
     public static void main(String[] args) {
 
-        //getMp3Files(args);
+        getMp3Files(args);
 
-        //databaseConnection();
+        databaseConnection();
 
-        SongServlet servlet = new SongServlet();
-
-        //servlet.doGet();
-
+        SongServlet.startServer();
 
     }
 
@@ -29,16 +26,15 @@ public class Main {
 
         try {
 
-            directoryPath = Paths.get(args[3]);
+            Path directoryPath = Paths.get(args[0]);
 
             if (Files.exists(directoryPath)) {
 
-                for(java.io.File file:directoryPath.toFile().listFiles()){
-
+                for(java.io.File file: Objects.requireNonNull(directoryPath.toFile().listFiles())){
 
                     if (file.isFile() && file.getName().endsWith(".mp3")) {
 
-                        Mp3File mp3file = new Mp3File(file);
+                        Mp3File mp3file = new Mp3File(file.toPath());
 
                         if( mp3file.hasId3v1Tag()) {
 
@@ -64,18 +60,14 @@ public class Main {
             }
 
 
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | IOException | UnsupportedTagException e) {
             System.err.println(e.getMessage());
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        } catch (UnsupportedTagException e) {
-            System.err.println(e.getMessage());
-        } catch (InvalidDataException  e) {
+        }   catch (InvalidDataException  e) {
             System.err.println(e.getDetailedMessage());
         }
     }
 
-    public static void databaseConnection() {
+    private static void databaseConnection() {
 
         try (Connection conn = DriverManager.getConnection(
                 "jdbc:h2:~/project_db;AUTO_SERVER=TRUE;INIT=runscript from '~/create.sql'")){
