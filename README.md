@@ -4,6 +4,9 @@ The program takes the input of the user (as a path where it contains mp3 files) 
 and shows them on browser as an HTML file using a servlet.
 
 # Built with
-H2 Database Engine (http://www.h2database.com/html/main.html) 
-MP3agic (https://github.com/mpatric/mp3agic)
-Jetty servlet(https://www.eclipse.org/jetty/)
+*H2 Database Engine (http://www.h2database.com/html/main.html) 
+*Intelij IDEA(https://www.jetbrains.com/idea/)
+*Jetty servlet(https://www.eclipse.org/jetty/)
+*MP3agic (https://github.com/mpatric/mp3agic)
+
+
